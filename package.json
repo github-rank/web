@@ -1,0 +1,25 @@
+{
+  "name": "git-rank-web",
+  "version": "1.0.0",
+  "description": "Web interface for git rank",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/FakeMethodology/git-rank-web.git"
+  },
+  "keywords": [
+    "git-rank",
+    "react",
+    "hunting",
+    "coa"
+  ],
+  "author": "akhlebaev",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/FakeMethodology/git-rank-web/issues"
+  },
+  "homepage": "https://github.com/FakeMethodology/git-rank-web#readme"
+}
