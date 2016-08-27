@@ -7,6 +7,9 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import AutoCompleteChanged from './AutoComplete';
+import RaisedButton from 'material-ui/RaisedButton';
+import SelectFieldChanged from './SelectField';
 
 
 const styles = {
@@ -16,33 +19,34 @@ const styles = {
     justifyContent: 'space-around',
   },
   gridList: {
-    width: 500,
-    height: 500,
+    width: 800,
+    height: 100,
     overflowY: 'auto',
     marginBottom: 24,
+    marginTop: 24
   },
 };
 
 const tilesData = [
   {
-    title: 'Breakfast',
-    author: 'jill111',
-    id: '1'
+    title: 'Select language',
+    id: '1',
+    content: <AutoCompleteChanged dataSourceTarget="language"/>
   },
   {
-    title: 'Tasty burger',
-    author: 'pashminu',
-    id: '2'
+    title: 'Location',
+    id: '2',
+    content: <AutoCompleteChanged dataSourceTarget="location"/>
   },
   {
-    title: 'Camera',
-    author: 'Danson67',
-    id: '3'
+    title: 'Level',
+    id: '3',
+    content: <SelectFieldChanged />
   },
   {
-    title: 'Morning',
-    author: 'fancycrave1',
-    id: '4'
+    title: ' ',
+    id: '4',
+    content: <RaisedButton label="Submit" secondary={true}/>
   }
 ];
 
@@ -50,6 +54,8 @@ const Filter = () => (
   <Card style={styles.root}>
     <GridList
       cellHeight={200}
+      cols={4}
+      padding={20}
       style={styles.gridList}
     >
       
@@ -57,7 +63,8 @@ const Filter = () => (
         <GridTile
           key={tile.id}
         >
-          {tile.title}
+          {tile.title}<br/>
+          {tile.content}
         </GridTile>
       ))}
     </GridList>
